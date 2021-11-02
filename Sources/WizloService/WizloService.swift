@@ -5,6 +5,8 @@ import Alamofire
 public class WizloService {
     
     public static let shared = WizloService()
+
+    public var person = "Ebubekir"
     
     public func request<T: Codable>(baseURL: String, requestRoute: WizloRouter, responseModel: T.Type, completion: @escaping(Result<T, WizloServiceError>) -> Void) {
         
