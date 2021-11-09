@@ -14,7 +14,8 @@ struct Constants {
     static let kWizloServiceAboutUs =  "menu-and-operation/misc-content/about-us"
     static let person = "Ebubekirs"
     
-    static let kMovieDBBaseURL = "https://api.themoviedb.org/"
+    static var kMovieDBBaseURL = "https://api.themoviedb.org/"
+    static var kMovieDBBaseURL2 = "3/movie/550"
     
 }
 
@@ -31,4 +32,5 @@ enum HttpHeaderField: String {
 enum ContentType: String {
     case json = "application/json"
     case ios = "IOS"
+    case api_key = "api_key"
 }

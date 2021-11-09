@@ -13,6 +13,8 @@ public enum WebRouter: URLRequestConvertible {
     case getFAQ(token: String, language: String)
     case getAboutUs(token: String, language: String)
     
+    case getMovie
+    
     public var method: HTTPMethod {
         switch self {
         case .login:
@@ -20,6 +22,8 @@ public enum WebRouter: URLRequestConvertible {
         case .getFAQ:
             return .get
         case .getAboutUs:
+            return .get
+        case .getMovie:
             return .get
         }
     }
@@ -32,6 +36,8 @@ public enum WebRouter: URLRequestConvertible {
             return Constants.kWizloServiceFAQs
         case .getAboutUs:
             return Constants.kWizloServiceAboutUs
+        case .getMovie:
+            return Constants.kMovieDBBaseURL2
         }
     }
     
@@ -42,6 +48,8 @@ public enum WebRouter: URLRequestConvertible {
         case .getFAQ:
             return nil
         case .getAboutUs:
+            return nil
+        case .getMovie:
             return nil
         }
     }
@@ -59,12 +67,14 @@ public enum WebRouter: URLRequestConvertible {
         switch self {
         case .getFAQ(_, let language), .login(_, _, let language), .getAboutUs(_, let language):
             return language
+        default:
+            return ""
         }
     }
     
     public func asURLRequest() throws -> URLRequest {
         
-        let url = try Constants.kWizloServiceBaseURL.asURL()
+        let url = try Constants.kMovieDBBaseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
@@ -86,6 +96,12 @@ public enum WebRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
+        
+        let parameters: Parameters = [
+                "api_key": "d9c7288fbcbc30ac0f4571f622448ef6"
+                ]
+        
+        
         
         return urlRequest
     }
