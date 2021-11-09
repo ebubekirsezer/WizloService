@@ -12,7 +12,7 @@ struct Constants {
     static let kWizloServiceLogin = "user/login"
     static let kWizloServiceFAQs = "menu-and-operation/misc-content/faq"
     static let kWizloServiceAboutUs =  "menu-and-operation/misc-content/about-us"
-    static let person = "Ebubekir"
+    static let person = "Ebubekirs"
     
     static let kMovieDBBaseURL = "https://api.themoviedb.org/"
     

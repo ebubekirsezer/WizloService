@@ -6,7 +6,7 @@ public class WebService {
     
     public static let shared = WebService()
 
-    public var person = "Ebubekir"
+    public var person = "Ebubekirs"
     
     public func request<T: Codable>(baseURL: String, requestRoute: WebRouter, responseModel: T.Type, completion: @escaping(Result<T, WebServiceError>) -> Void) {
         
