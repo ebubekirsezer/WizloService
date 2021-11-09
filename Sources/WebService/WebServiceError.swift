@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum WizloServiceError: Error {
+public enum WebServiceError: Error {
     case parseError
     case badURLError
     case badRequestError

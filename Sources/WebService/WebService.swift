@@ -2,13 +2,13 @@
 import Foundation
 import Alamofire
 
-public class WizloService {
+public class WebService {
     
-    public static let shared = WizloService()
+    public static let shared = WebService()
 
     public var person = "Ebubekir"
     
-    public func request<T: Codable>(baseURL: String, requestRoute: WizloRouter, responseModel: T.Type, completion: @escaping(Result<T, WizloServiceError>) -> Void) {
+    public func request<T: Codable>(baseURL: String, requestRoute: WebRouter, responseModel: T.Type, completion: @escaping(Result<T, WebServiceError>) -> Void) {
         
         Constants.kWizloServiceBaseURL = baseURL + "api/"
         

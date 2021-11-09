@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public enum WizloRouter: URLRequestConvertible {
+public enum WebRouter: URLRequestConvertible {
     case login(token: String, body: Parameters?, language: String)
     case getFAQ(token: String, language: String)
     case getAboutUs(token: String, language: String)
